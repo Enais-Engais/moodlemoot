@@ -4,7 +4,6 @@ services:
   mariadb:
     image: bitnami/mariadb:latest
     environment:
-      - ALLOW_EMPTY_PASSWORD=yes
       - MARIADB_USER=${DB_USER}
       - MARIADB_DATABASE=${DB_NAME}
       - MARIADB_PASSWORD=${DB_PASSWORD}
