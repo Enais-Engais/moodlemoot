@@ -4,12 +4,8 @@ USER root
 
 RUN apt-get update && apt-get install -y --no-install-recommends wget unzip
 
-# Euskarazko hizkuntza paketea jeixi (basque)
-RUN wget https://download.moodle.org/download.php/direct/langpack/2.0/eu.zip -P /tmp/
-# Deskonprimitu dagokion tokian
-RUN unzip /tmp/eu.zip -d /opt/bitnami/moodle/lang/
+RUN cp /opt/bitnami/scripts/moodle/entrypoint.sh /opt/bitnami/scripts/moodle/entrypoint-origin.sh
 
-# fitxategiaren jabetza aldatu
-RUN chown -R daemon:root /opt/bitnami/moodle/lang/eu
+COPY entrypoint.sh /opt/bitnami/scripts/moodle/entrypoint.sh
 
-USER 1001
+RUN chmod +x /opt/bitnami/scripts/moodle/entrypoint.sh
