@@ -2,5 +2,10 @@
 Moodle-kin proba egiteko repositorioa
 .env fitxategian jarri root eta moodleuser pasahitza. Hauek izango dira mysql-ko datuak
 
-* Dockerfile erabiliz irudi pertsonalizatuak eraiki ditzakegu eta gure irudiari kapak gehitzen joan:
-   $ docker build -t moodle-euskaraz .
+
+** docker-compose.yml fitxategia erabiltzen baduagu bitnami/moodle irudi originalarekin arrankatuko dugu gure moodle ingurunea.
+.env fitxategian dauden aldagaiak erabiliko dira konfiguratzeko.
+
+
+*** docker-compose.yml.1 (.1 kendu beharko diogu erabiltzeko): Gure proiketuaren karpetan "doikuntzak" izeneko direktorio bat sortu eta bertan sartuko ditugu "Dockerfile" eta "entrypoint.sh".
+Lehendabizi irudi berria eraikiko dugu: "docker compose build --no-cache", ondoren exekutatu "docker-compose up -d"
